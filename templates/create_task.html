@@ -1,0 +1,18 @@
+{% extends 'main.html'%}
+{% block content %}
+<div class="container">
+    <div class="col-md-6 task-form p-5">
+        <h5>CREATE NEW TASKS</h5>
+        <hr>
+        <form action="/" method="POST">
+            <div class="mb-2">
+                <label class="form-label">Task-Content</label>
+                <input type="text" required name="content" id="content" class="form-control">
+            </div>
+            <div class="mb-2">
+                <input type="submit" value="CREATE TASK" class="btn btn-primary btn-sm">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

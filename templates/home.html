@@ -1,0 +1,33 @@
+{% extends 'main.html'%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col table-content p-5">
+            <h5>ALL YOUR TASKS</h5>
+            <hr>
+            <table class="table">
+                <tr>
+                    <th>S.NO</th>
+                    <th>CONTENT</th>
+                    <th>CREATED_AT</th>
+                    <th>DELETE</th>
+                    <th>UPDATE</th>
+                </tr>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{task.id}}</td>
+                    <td>{{task.content}}</td>
+                    <td>{{task.date_created.strftime('%Y-%m-%d')}}</td>
+                    <td><a href="/delete/{{task.id}}">Delete</a></td>
+                    <td><a href="/update/{{task.id}}">Update</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <center>
+                <a href="/create_task" class="btn btn-primary btn-sm ">CREATE NEW TASK</a>
+            </center>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

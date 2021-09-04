@@ -1,0 +1,21 @@
+{% extends 'main.html'%}
+{% block content %}
+<div class="container">
+    <div class="col-6 task-form p-5">
+        <h5>Update Task</h5>
+        <hr>
+        <form action="/update/{{task.id}}" method="POST">
+            <div class="mb-2">
+                <label class="form-label">Task-Content</label>
+                <input type="text" required value="{{task.content}}" name="content" id="content" class="form-control">
+            </div>
+
+            <div class="mb-2">
+
+                <input type="submit" value="UPDATE TASK" class="btn btn-primary btn-sm">
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}
